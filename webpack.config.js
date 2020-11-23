@@ -13,6 +13,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        loader: "html-loader"
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
@@ -23,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource"
+        type: "asset/inline"
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
