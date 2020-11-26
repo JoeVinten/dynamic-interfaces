@@ -1,5 +1,7 @@
 import "./image-slider.scss";
+
 // Convert this into a functional component
+
 class Slider {
   constructor({
     sliderSelector = ".slider",
@@ -14,7 +16,6 @@ class Slider {
     this.sliderContainer = document.querySelector(sliderContainerSelector);
     this.previousBtn = document.querySelector(previousSelector);
     this.nextBtn = document.querySelector(nextSelector);
-    this.slideSize = this.slider.offsetWidth;
     this.currentSlide = 0;
     this.setEventListeners();
     this.generateShortCuts();
@@ -22,7 +23,7 @@ class Slider {
 
   moveSlides() {
     this.sliderContainer.style.transform = `translateX(-${this.currentSlide *
-      this.slideSize}px)`;
+      this.slider.offsetWidth}px)`;
     Array.from(this.shortcuts.children).forEach(shortcut =>
       shortcut.classList.remove("active")
     );
